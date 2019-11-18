@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtWidgets>
 
 struct Task
 {
@@ -29,6 +30,11 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QFuture<qreal> future;
+    QList<qreal> arr;
+    QList<Task> tasks;
+    QFutureWatcher<qreal> *watcher;
+    QTime time;
 
 };
 #endif // MAINWINDOW_H
